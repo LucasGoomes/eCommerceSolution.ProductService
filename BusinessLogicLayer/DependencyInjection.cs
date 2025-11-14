@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using eCommerce.BusinessLogicLayer.Mappers;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace eCommerce.ProductsService.BusinessLogicLayer
 {
@@ -9,7 +10,7 @@ namespace eCommerce.ProductsService.BusinessLogicLayer
         {
             // Register your data access layer services here
             // e.g., services.AddScoped<IYourRepository, YourRepository>();
-
+            services.AddAutoMapper(typeof(ProductAddRequestToProductMappingProfile));
 
 
             return services;
