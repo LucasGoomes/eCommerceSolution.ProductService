@@ -6,7 +6,7 @@ using eCommerce.ProductsMicroService.API.Middlewares;
 var builder = WebApplication.CreateBuilder(args);
 
 // add DAL and BLL services
-builder.Services.AddDataAccessLayer(); // API only references BLL, but we can access DAL through BLL
+builder.Services.AddDataAccessLayer(builder.Configuration); // API only references BLL, but we can access DAL through BLL
 builder.Services.AddDBusinessLogicLayer();
 
 builder.Services.AddControllers();
