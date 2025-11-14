@@ -1,4 +1,6 @@
 ﻿using eCommerce.DataAccessLayer.Context;
+using eCommerce.DataAccessLayer.Repositories;
+using eCommerce.DataAccessLayer.RepositoryContracts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +17,8 @@ namespace eCommerce.ProductsService.DataAccessLayer
             {
                 options.UseMySQL(configuration.GetConnectionString("DefaultConnection")!);
             });
+
+            services.AddScoped<IProductsRepository, ProductsRepository>();
 
 
             return services;
