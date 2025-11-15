@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using eCommerce.BusinessLogicLayer.DTO;
 using eCommerce.BusinessLogicLayer.DTOs;
 using eCommerce.BusinessLogicLayer.ServiceContracts;
 using eCommerce.DataAccessLayer.Entities;
@@ -8,7 +7,7 @@ using FluentValidation;
 using FluentValidation.Results;
 using System.Linq.Expressions;
 
-namespace BusinessLogicLayer.Services;
+namespace eCommerce.BusinessLogicLayer.Services;
 
 public class ProductsService : IProductsService
 {

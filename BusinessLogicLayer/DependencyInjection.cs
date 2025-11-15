@@ -1,4 +1,6 @@
 ﻿using eCommerce.BusinessLogicLayer.Mappers;
+using eCommerce.BusinessLogicLayer.ServiceContracts;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace eCommerce.ProductsService.BusinessLogicLayer
@@ -11,7 +13,8 @@ namespace eCommerce.ProductsService.BusinessLogicLayer
             // Register your data access layer services here
             // e.g., services.AddScoped<IYourRepository, YourRepository>();
             services.AddAutoMapper(typeof(ProductAddRequestToProductMappingProfile));
-
+            services.AddValidatorsFromAssemblyContaining<ProductAddRequestToProductMappingProfile>();
+            services.AddScoped<IProductsService, eCommerce.BusinessLogicLayer.Services.ProductsService>();
 
             return services;
         }
